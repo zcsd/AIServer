@@ -7,6 +7,8 @@ from dqn import DQNAgent
 
 PORT = 8000
 
+ITEM_DICT = {1: 'U型管', 2: '烧杯', 3: '带空气的集气瓶', 4: '绿色墨水', 5: '玻璃片', 6: '半透膜', 7: '盐', 8: '粗试管', 9: '有棕色气体的集气瓶'}
+
 class ResquestHandler(BaseHTTPRequestHandler):
 	def __init__(self, request, client_address, server):
 		self.diffAgent = DQNAgent(True, 'diffusion')
@@ -63,7 +65,7 @@ class ResquestHandler(BaseHTTPRequestHandler):
 		else: 
 			action = "return"
 
-		decision = action + "物品" + str(itemno)
+		decision = "试一下" + action + ITEM_DICT[itemno] + '吧'
 
 		return decision
 		
