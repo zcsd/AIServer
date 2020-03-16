@@ -65,7 +65,7 @@ class ResquestHandler(BaseHTTPRequestHandler):
 		else: 
 			action = "return"
 
-		decision = "试一下" + action + ITEM_DICT[itemno] + '吧'
+		decision = "试一下" + action + ITEM_DICT[itemno+1] + '吧'
 
 		return decision
 		
